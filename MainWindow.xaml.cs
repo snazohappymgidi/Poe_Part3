@@ -17,7 +17,7 @@ namespace RecipeApp
             InitializeComponent();
             InitializeData();
         }
-        private void InitializeData()
+        private void InitializeData() 
         {
             recipes = new List<Recipe>();
             displayedRecipes = new List<Recipe>();
