@@ -10,7 +10,7 @@ namespace RecipeApp
             InitializeComponent();
             this.ingredients = ingredients;
             FoodGroupComboBox.ItemsSource = new List<string> { "Protein",
-"Vegetable", "Fruit", "Grain", "Dairy" };
+"Vegetable", "Fruit", "Grain", "Dairy" , "Water" };
             FoodGroupComboBox.SelectedIndex = 0;
         }
         private void Save_Click(object sender, RoutedEventArgs e)
