@@ -1,0 +1,59 @@
+﻿<Window x:Class="RecipeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RecipeApp" Height="400" Width="990">
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Background="#80E27E" Foreground="#FF6200EE">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit" Click="MenuItem_Exit_Click"/>
+                
+            </MenuItem>
+        </Menu>
+        
+        <StackPanel Grid.Row="1" Margin="10">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox x:Name="FilterByNameTextBox" Width="200" 
+                         Margin="5" VerticalAlignment="Center"
+                         GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <ComboBox x:Name="FilterByFoodGroupComboBox" Width="150"
+                          Margin="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="MaxCaloriesTextBox" Width="100" 
+                         Margin="5" VerticalAlignment="Center"
+                         GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <Button Content="Apply Filters" Width="100" 
+                        Margin="5" Click="ApplyFilters_Click"/>
+                <Button Content="Display All Recipes" Width="150" 
+                        Margin="5" Click="DisplayRecipes_Click"/>
+            </StackPanel>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox x:Name="RecipeListBox" Grid.Column="0" 
+                         SelectionChanged="RecipeListBox_SelectionChanged"
+                         Background="#FFF8E1" BorderBrush="#FF6200EE"/>
+                <StackPanel Grid.Column="1" Margin="10">
+                    <TextBlock x:Name="RecipeNameTextBlock" FontSize="20" FontWeight="Bold" Foreground="#FF6200EE"/>
+                    <TextBlock Text="Ingredients:" FontWeight="Bold" Margin="5,10,0,5"/>
+                    <ListBox x:Name="IngredientsListBox" Background="#FFF8E1" BorderBrush="#FF6200EE"/>
+                    <TextBlock Text="Steps:" FontWeight="Bold" Margin="5,10,0,5"/>
+                    <ListBox x:Name="StepsListBox" Background="#FFF8E1" BorderBrush="#FF6200EE"/>
+                    <TextBlock x:Name="TotalCaloriesTextBlock" FontWeight="Bold" Foreground="#FF6200EE" Margin="5,10,0,5"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                        <Button Content="Add New Recipe" Width="120" Margin="5" Click="AddNewRecipe_Click"/>
+                        <Button Content="Scale Recipe" Width="100" Margin="5" Click="ScaleRecipe_Click"/>
+                        <Button Content="Reset Quantities" Width="120" Margin="5" Click="ResetQuantities_Click"/>
+                        <Button Content="Clear Recipe" Width="100" Margin="5" Click="ClearRecipe_Click"/>
+                        <Button Content="Delete Recipe" Width="100" Margin="5" Click="DeleteRecipe_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
