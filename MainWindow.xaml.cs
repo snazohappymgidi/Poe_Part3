@@ -55,7 +55,7 @@ namespace RecipeApp
 
             RecipeListBox.ItemsSource = null;
             RecipeListBox.ItemsSource = displayedRecipes;
-        }
+        } 
 
         private void RecipeListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
