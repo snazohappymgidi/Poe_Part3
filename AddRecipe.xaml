@@ -3,33 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ADD Recipe" Height="600" Width="800">
     <Window.Resources>
+        <!-- Styles for Buttons -->
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="10"/>
             <Setter Property="Background" Value="#FF6200EE"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
+        <!-- Styles for TextBoxes -->
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="10"/>
             <Setter Property="Background" Value="#E8F5E9"/>
         </Style>
+        <!-- Styles for Labels -->
         <Style TargetType="Label">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Foreground" Value="#333"/>
         </Style>
     </Window.Resources>
     <Grid Background="#FAFAFA">
+        <!-- Grid Rows Definition -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <!-- Row for Recipe Name -->
             <RowDefinition Height="*"/>
+            <!-- Row for Ingredients and Steps -->
             <RowDefinition Height="Auto"/>
+            <!-- Row for Save and Cancel buttons -->
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical" Margin="10">
+
+        <!-- StackPanel for Recipe Name -->
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="0">
             <Label Content="Recipe Name:"/>
             <TextBox x:Name="RecipeNameTextBox"/>
         </StackPanel>
+
+        <!-- StackPanel for Ingredients and Steps -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="1">
+            <!-- Panel for Ingredients -->
             <StackPanel>
                 <Label Content="Number of Ingredients:"/>
                 <TextBox x:Name="NumIngredientsTextBox"/>
@@ -37,6 +49,8 @@
                 <ListBox x:Name="IngredientsListBox" Width="300" Height="150" Background="#F1F8E9"/>
                 <Button x:Name="AddIngredientButton" Content="Add Ingredient" Click="AddIngredient_Click" IsEnabled="False"/>
             </StackPanel>
+
+            <!-- Panel for Steps -->
             <StackPanel Margin="20,0,0,0">
                 <Label Content="Number of Steps:"/>
                 <TextBox x:Name="NumStepsTextBox"/>
@@ -45,6 +59,8 @@
                 <Button x:Name="AddStepButton" Content="Add Step" Click="AddStep_Click" IsEnabled="False"/>
             </StackPanel>
         </StackPanel>
+
+        <!-- StackPanel for Save and Cancel buttons -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="2">
             <Button x:Name="SaveButton" Content="Save" Click="Save_Click"/>
             <Button x:Name="CancelButton" Content="Cancel" Click="Cancel_Click"/>
