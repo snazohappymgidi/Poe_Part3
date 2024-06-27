@@ -25,7 +25,7 @@ namespace RecipeApp
             recipes = new List<Recipe>();
             displayedRecipes = new List<Recipe>();
 
-            // Add initial recipes or load from file/database
+            // Add initial recipes or load from file/database 
 
             FilterByFoodGroupComboBox.ItemsSource = new List<string> { "All", "Protein", "Vegetable", "Fruit", "Grain", "Dairy" , "Water" };
             FilterByFoodGroupComboBox.SelectedIndex = 0;
